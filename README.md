@@ -1,2 +1,2 @@
 # security-ai-starter-prompts
-Structured prompt frameworks for cybersecurity professionals using AI tools. Aligned with principles from 'Prompt Thinking for Security Professionals'.
+Professional-grade prompt frameworks that help security practitioners leverage AI tools effectively for log analysis, threat intelligence research, and policy development. Built on systematic engineering principles of Context, Specificity, Structure, and Iteration. These frameworks transform AI from casual assistant to strategic tool for high-stakes security work.
