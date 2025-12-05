@@ -190,4 +190,4 @@ If you're struggling to adapt these prompts effectively:
 
 ---
 
-**Remember**: These prompts don't replace your security expertise—they augment it. You remain responsible for verification, judgment, and outcomes. Use them thoughtfully, adapt them systematically, and always maintain the professional standards your work demands.
+**Remember**: These prompts don't replace your security expertise, they augment it. You remain responsible for verification, judgment, and outcomes. Use them thoughtfully, adapt them systematically, and always maintain the professional standards your work demands.
