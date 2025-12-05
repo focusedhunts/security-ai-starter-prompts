@@ -17,7 +17,7 @@ This collection serves as a practical companion to the book [**Prompt Intelligen
 All prompts in this repository are built on four foundational principles that distinguish professional AI use from casual experimentation:
 
 ### 1. **Context is King**
-Effective prompts provide appropriate context about your role, environment, and constraints without compromising sensitive information. Security work demands more contextual specificity than most domains—generic prompts produce generic (and often dangerous) outputs.
+Effective prompts provide appropriate context about your role, environment, and constraints without compromising sensitive information. Security work demands more contextual specificity than most domains; generic prompts produce generic (and often dangerous) outputs.
 
 ### 2. **Specificity Drives Accuracy**
 Vague requests yield vague results. Professional prompts define precise requirements across three dimensions: format (how information should be structured), scope (what's included and excluded), and depth (the appropriate detail level for your audience and purpose).
@@ -26,7 +26,7 @@ Vague requests yield vague results. Professional prompts define precise requirem
 Complex security tasks benefit from structured approaches that break work into discrete phases, separate analytical from synthetic work, and specify output organization. Structure transforms AI from a conversational tool into a directed capability.
 
 ### 4. **Iteration Reveals Truth**
-First attempts rarely produce final deliverables in security work. Systematic iteration—whether through multi-turn conversations or prompt refinement—progressively improves outputs while building your understanding of both the problem and the AI's capabilities.
+First attempts rarely produce final deliverables in security work. Systematic iteration, whether through multi-turn conversations or prompt refinement, progressively improves outputs while building your understanding of both the problem and the AI's capabilities.
 
 ---
 
