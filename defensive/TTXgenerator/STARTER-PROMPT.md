@@ -11,12 +11,18 @@ Choose one scenario type to customize. Each has specific threat vectors, decisio
 2. **Business Email Compromise** (Beginner-Intermediate) - Social engineering → fraudulent wire transfers
 3. **Data Breach - Customer PII** (Intermediate) - External attack → regulatory notification
 4. **Insider Threat - Malicious Employee** (Advanced) - IP theft & backdoors → forensics & HR coordination
+5. **Cloud Misconfiguration** (Intermediate) - Misconfigured cloud storage → data exposure & compliance breach
+6. **Supply Chain Compromise** (Advanced) - Third-party breach → cascading customer impact & forensics
+7. **Third-Party Vendor Compromise** (Advanced) - Vendor system breach → organizational impact & vendor coordination
 
 Reference URLs:
 - Ransomware: https://raw.githubusercontent.com/focusedhunts/security-ai-starter-prompts/main/defensive/TTXgenerator/scenarios/ransomware-scenario.md
 - BEC: https://raw.githubusercontent.com/focusedhunts/security-ai-starter-prompts/main/defensive/TTXgenerator/scenarios/business-email-compromise.md
 - Data Breach: https://raw.githubusercontent.com/focusedhunts/security-ai-starter-prompts/main/defensive/TTXgenerator/scenarios/data-breach-pii.md
 - Insider Threat: https://raw.githubusercontent.com/focusedhunts/security-ai-starter-prompts/main/defensive/TTXgenerator/scenarios/insider-threat.md
+- Cloud Misconfiguration: https://raw.githubusercontent.com/focusedhunts/security-ai-starter-prompts/main/defensive/TTXgenerator/scenarios/cloud-misconfiguration.md
+- Supply Chain Compromise: https://raw.githubusercontent.com/focusedhunts/security-ai-starter-prompts/main/defensive/TTXgenerator/scenarios/supply-chain-compromise.md
+- Third-Party Vendor Compromise: https://raw.githubusercontent.com/focusedhunts/security-ai-starter-prompts/main/defensive/TTXgenerator/scenarios/third-party-vendor-compromise.md
 
 **Component Libraries:**
 Use these reusable elements to customize exercises:
@@ -136,6 +142,9 @@ Choose ONE:
 - **Business Email Compromise** (Beginner-Intermediate) - Social engineering, fraudulent wire transfers
 - **Data Breach - Customer PII** (Intermediate) - External attack, regulatory notifications
 - **Insider Threat - Malicious Employee** (Advanced) - IP theft, backdoors, forensics
+- **Cloud Misconfiguration** (Intermediate) - Misconfigured cloud storage, data exposure, compliance breach
+- **Supply Chain Compromise** (Advanced) - Third-party breach, cascading impact, forensics
+- **Third-Party Vendor Compromise** (Advanced) - Vendor system breach, organizational impact, vendor coordination
 
 ### Question 2: Client Context
 **Tell me about your client (2-3 sentences):**
@@ -171,9 +180,9 @@ Also specify format: In-person, virtual, or hybrid?
 
 ---
 
-## Quality Validation & Troubleshooting
+## Quality Validation & Output Gating
 
-- **Quality Check (optional):** Review generated exercises against TTX-QUALITY-VALIDATOR.md
+- **Mandatory Quality Validation:** Every generated exercise MUST pass all critical requirements in TTX-QUALITY-VALIDATOR.md before delivery. See this document for the 3-layer validation process (Critical Requirements, Quality Requirements, Deliverable Guidance).
 - **GitHub Access Issues:** See ERROR-HANDLING-GUIDE.md for fallback options
 - **Detailed Guidance:** See README.md for Emergency Mode standards, error recovery, and firewall solutions
 

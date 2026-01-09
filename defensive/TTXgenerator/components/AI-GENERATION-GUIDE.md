@@ -1099,73 +1099,133 @@ When generating output, verify:
 
 ---
 
-## Step 8: Pre-Delivery Quality Validation
+## Step 8: MANDATORY Quality Validation & Output Gating
 
-**CRITICAL:** Before finalizing your output for delivery, validate it using the TTX Quality Validator checklist. This ensures your exercise meets professional standards before the consultant receives it.
+**ENFORCED REQUIREMENT:** Every TTX exercise MUST pass TTX-QUALITY-VALIDATOR.md before delivery. Exercises that fail critical validation are REJECTED and must be revised. This is NOT optional.
 
-### Validation Reference
+### Quality Validation Flow
 
-Access the complete validation criteria here:
+```
+Generation Complete
+        ↓
+Run TTX-QUALITY-VALIDATOR
+        ↓
+CRITICAL REQUIREMENTS (Layer 1)
+        ↓
+    All 6 Pass? ────→ YES → Continue to Layer 2
+        ↓
+       NO
+        ↓
+    ❌ REJECT OUTPUT
+    Identify which critical requirements failed
+    Revise exercise to fix failures
+    Re-run validation
+    ↓
+QUALITY REQUIREMENTS (Layer 2)
+    ↓
+    Mostly Pass? ────→ YES → Ready to deliver
+    ↓
+   Partial? ────→ Fix issues, re-validate
+```
+
+### Complete Validation Reference
+
+Access the comprehensive validation criteria here:
 https://raw.githubusercontent.com/focusedhunts/security-ai-starter-prompts/main/defensive/TTXgenerator/components/TTX-QUALITY-VALIDATOR.md
 
-### CRITICAL REQUIREMENTS (Must ALL Pass)
+**CRITICAL LAYER (Layer 1): Must ALL Pass - Non-Negotiable**
 
-Before outputting your facilitator guide, verify:
+If ANY of these fail, the exercise cannot be delivered. Fix and re-validate.
 
-**1. Inject Count Minimum:**
-- ☐ 2-hour exercise: ≥8 injects (count them)
-- ☐ 4-hour exercise: ≥15 injects (count them)
-- ☐ 6-hour exercise: ≥25 injects
-- ☐ Full-day exercise: ≥35 injects
+**1. Inject Count Minimum (MANDATORY - Count Explicitly):**
+- ✅ 2-hour exercise: ≥8 injects (you count: inject #1, #2, #3... done at #8 or higher)
+- ✅ 4-hour exercise: ≥15 injects (count explicitly: inject #1 through #15 minimum)
+- ✅ 6-hour exercise: ≥25 injects
+- ✅ Full-day exercise: ≥35 injects
+- **If failed:** Add missing injects or report undercounting error
 
-**2. Export Markers (All 7 Must Be Present):**
-- ☐ `<!-- EXPORT MARKER: FACILITATOR-GUIDE START/END -->`
-- ☐ `<!-- EXPORT MARKER: SCENARIO-NARRATIVE START/END -->`
-- ☐ `<!-- EXPORT MARKER: INJECT-TIMELINE START/END -->`
-- ☐ `<!-- EXPORT MARKER: DECISION-POINTS START/END -->`
-- ☐ `<!-- EXPORT MARKER: COMPLICATIONS START/END -->`
-- ☐ `<!-- EXPORT MARKER: DEBRIEF-TEMPLATE START/END -->`
-- ☐ `<!-- EXPORT MARKER: PARTICIPANT-BRIEF START/END -->`
+**2. Export Markers (MANDATORY - All 7 Pairs Must Be Present):**
+- ✅ `<!-- EXPORT MARKER: FACILITATOR-GUIDE START -->` and `END -->`
+- ✅ `<!-- EXPORT MARKER: SCENARIO-NARRATIVE START -->` and `END -->`
+- ✅ `<!-- EXPORT MARKER: INJECT-TIMELINE START -->` and `END -->`
+- ✅ `<!-- EXPORT MARKER: DECISION-POINTS START -->` and `END -->`
+- ✅ `<!-- EXPORT MARKER: COMPLICATIONS START -->` and `END -->`
+- ✅ `<!-- EXPORT MARKER: DEBRIEF-TEMPLATE START -->` and `END -->`
+- ✅ `<!-- EXPORT MARKER: PARTICIPANT-BRIEF START -->` and `END -->`
+- **Validation method:** Search output for "EXPORT MARKER:" and count START/END pairs. Must be exactly 7 pairs.
+- **If failed:** Add missing markers or fix malformed pairs
 
-**3. Every Inject Must Include (All 4 Components):**
-- ☐ **Content:** 300-500 words, realistic formatting, specific data points
-- ☐ **Facilitator Prompts:** 4-6 Socratic questions (open-ended)
-- ☐ **Evaluation Points:** 4-6 checkboxes (observable criteria)
-- ☐ **Expected Response:** 4-6 specific actions (technical + communication)
+**3. Every Single Inject Must Include ALL 4 Components (MANDATORY):**
+- ✅ **Content** (300-500 words minimum)
+  - Realistic formatting (email headers, phone call dialogue, alert log entries, etc.)
+  - Specific data points (server names, employee names, departments, timestamps, etc.)
+  - Industry-appropriate language and context
+- ✅ **Facilitator Prompts** (4-6 Socratic questions, NOT statements)
+  - Must be open-ended ("What would you do?", "How would you prioritize?")
+  - NOT closed ("Did you call IT?" or "You should implement...")
+  - Focus on thinking process, not "right answers"
+- ✅ **Evaluation Points** (4-6 observable criteria as checkboxes)
+  - Format: ☐ [Observable behavior you're watching for]
+  - Examples: "☐ Team identifies scope", "☐ Security contacted immediately"
+  - Process-focused, not outcome-focused
+- ✅ **Expected Response** (4-6 specific actions)
+  - Technical responses: "Isolate affected systems immediately"
+  - Communication responses: "Brief executive within 15 minutes"
+  - Business responses: "Activate business continuity plan"
+- **Validation method:** Review each inject. If ANY inject is missing ANY of these 4 components, output FAILS.
+- **If failed:** Add missing components to every affected inject
 
-**4. No Placeholder Text:**
-- ☐ Search for "TBD", "TODO", "Add ", "[TBD]", "[Add", "Lorem", "TBA"
-- ☐ Zero instances allowed in final output
+**4. No Placeholder or TBD Text Allowed (MANDATORY - Zero Tolerance):**
+- ✅ Search output for: "TBD", "TODO", "Add ", "[TBD]", "[Add", "Lorem", "TBA", "[INSERT", "FILL IN"
+- ✅ Zero instances allowed in final output
+- ✅ Every facilitator prompt is a complete question
+- ✅ Every section is fully written (not summarized, abbreviated, or incomplete)
+- **If failed:** Replace ALL placeholders with complete, professional content
 
-**5. Style Adherence (Based on Consultant Choice):**
-- ☐ Traditional: Facilitator-paced timing, 20-30 min per inject, no scoring
-- ☐ Blended: Light scoring, 10-15 min response windows, mixed timing
-- ☐ Gamified: Strict timing, heavy scoring, compressed discussions
+**5. Style Adherence (MANDATORY - Applied Consistently):**
+- ✅ **Traditional:** Facilitator-paced timing (no rush), 20-30 min per inject, NO scoring, Socratic focus
+- ✅ **Blended:** Light scoring, 10-15 min response windows, mixed timing, balanced discussion
+- ✅ **Gamified:** Strict timing (T+10, T+20, etc.), heavy scoring with points, compressed discussions (3-5 min), penalty timers
+- **Validation method:** Read 3-4 random injects. Do they match the chosen style? If inconsistent, output FAILS.
+- **If failed:** Standardize style throughout the entire exercise
 
-**6. Decision Points (Appropriate Count):**
-- ☐ 2-hour exercise: 2-3 major decisions fully developed
-- ☐ 4-hour exercise: 4-5 major decisions fully developed
-- ☐ 6-hour+ exercise: All 5 decision points fully developed
+**6. Decision Points Present in Correct Count (MANDATORY):**
+- ✅ 2-hour exercise: 2-3 major decisions, fully developed with A/B/C options
+- ✅ 4-hour exercise: 4-5 major decisions, fully developed with A/B/C options
+- ✅ 6-hour+ exercise: All 5 decision points fully developed with A/B/C options
+- **If failed:** Add missing decision points or expand incomplete ones
 
-### QUALITY REQUIREMENTS (Should Mostly Pass)
+### QUALITY LAYER (Layer 2): Should Mostly Pass - Professional Standards
+
+Once Layer 1 passes, evaluate these quality standards:
 
 **7. Scenario Realism:**
-- ☐ Organization profile detailed and specific (200-300 words minimum)
-- ☐ Threat actor profile included and realistic
-- ☐ Attack timeline shows realistic progression
-- ☐ Industry-specific regulatory/compliance context included
+- Organization profile detailed (200-300 words minimum)
+- Threat actor profile included and realistic
+- Attack timeline shows realistic progression (days between initial compromise and discovery)
+- Industry-specific regulatory/compliance context included
 
 **8. Facilitator Guidance Quality:**
-- ☐ Decision points include clear options (A/B/C with trade-offs)
-- ☐ Facilitator prompts are Socratic (encourage thinking)
-- ☐ Coaching notes provided for common challenges
-- ☐ Team integration notes help observe team dynamics
+- Decision points include clear A/B/C options with legitimate pros/cons
+- Facilitator prompts are Socratic (encourage thinking, not judgment)
+- Coaching notes provided for common team challenges
+- Evaluation criteria help facilitator observe team dynamics and learning
 
-### What To Do If Validation Fails
+**9. Overall Professionalism:**
+- No grammatical errors or awkward phrasing
+- Consistent terminology and voice
+- Professional formatting and structure
+- Appropriate tone for client delivery
 
-- **Critical requirement failed:** The output is INCOMPLETE. Revise before delivery.
-- **Quality requirement not met:** Output can be delivered but will need polishing.
-- **All checks pass:** Output is ready for consultant delivery.
+### Mandatory Action If Validation Fails
+
+| Result | Action | Next Step |
+|--------|--------|-----------|
+| **Critical requirement failed** | 🛑 REJECT OUTPUT | Fix the failure. Re-run validation. Cannot proceed to delivery. |
+| **Quality requirement not met** | ⚠️ FIX ISSUES | Improve quality. Re-validate. Then deliver. |
+| **All checks pass** | ✅ APPROVED | Output is ready for consultant delivery. |
+
+**Key Rule:** Never skip validation. Never deliver output that fails critical requirements. If you catch yourself about to output something, stop and fix it first.
 
 ---
 

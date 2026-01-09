@@ -18,6 +18,106 @@ Copy a short prompt, paste into your preferred AI tool, answer six questions (in
 
 ---
 
+## How the TTX Generator Works: Complete System Overview
+
+The TTX Generator is a **modular, prompt-driven system** that coordinates multiple markdown components through a single starter prompt. Understanding how these pieces interact helps you use the system effectively and customize it for your needs.
+
+### System Architecture
+
+When you paste **STARTER-PROMPT.md** into an LLM, the following process occurs automatically:
+
+```
+1. CONSULTANT PROVIDES STARTER-PROMPT
+   ↓
+2. LLM FETCHES 6 COMPONENT LIBRARIES (automatically via GitHub URLs):
+   • Selected Scenario (ransomware, BEC, data breach, or insider threat)
+   • inject-library.md → 30+ reusable inject templates
+   • decision-points.md → 5 major decision frameworks
+   • complications.md → Complication templates by difficulty level
+   • TTX-STYLE-GUIDE.md → Formatting rules for Traditional/Blended/Gamified
+   • AI-GENERATION-GUIDE.md → Step-by-step generation instructions
+   ↓
+3. CONSULTANT ANSWERS 5 QUESTIONS
+   ↓
+4. LLM FOLLOWS AI-GENERATION-GUIDE (Generation Rules):
+   Step 1: Parse your answers → Extract context
+   Step 2: Select injects → Match to duration (8-12 for 2hr, 15-20 for 4hr, etc.)
+   Step 3: Select decision points → Customize for industry
+   Step 4: Select complications → Calibrate for skill level + style
+   Step 5: Apply style constraints → Traditional/Blended/Gamified formatting
+   Step 6: Generate complete output → Facilitator guide with 7 export markers
+   ↓
+5. YOU RECEIVE COMPLETE FACILITATOR PACKAGE:
+   • Exercise overview & learning objectives
+   • Customized scenario narrative
+   • 15-20+ injects with timing, content, & facilitator prompts
+   • 4-5 decision points with full frameworks
+   • 2-3 complications with realistic triggers
+   • Debrief structure
+   • Participant materials (non-spoiler)
+   • Next Steps: Converting to PowerPoint
+   ↓
+6. YOU DELIVER (Choose Your Option):
+   Option A: Use markdown directly in exercise
+   Option B: Extract sections using export markers (SCENARIO-NARRATIVE, PARTICIPANT-BRIEF, etc.)
+   Option C: Convert to professional PowerPoint via DELIVERABLE-CREATION-GUIDE.md
+```
+
+### Component Interaction Details
+
+**inject-library.md** contains 30+ pre-designed injects organized by incident phase:
+- Detection phase (finding the incident)
+- Investigation phase (understanding scope)
+- Containment phase (stopping the spread)
+- Response phase (managing the crisis)
+- Recovery phase (restoring operations)
+
+The LLM uses your duration choice to select appropriate injects. A 4-hour exercise gets 15-20 injects; a 2-hour gets 8-12; a full-day gets 40+.
+
+**decision-points.md** contains 5 major decision frameworks:
+- Containment strategy (aggressive vs. selective isolation)
+- Ransom payment decision (pay, don't pay, negotiate)
+- Data breach notification (scope, timing, communication)
+- Recovery approach (backup restoration, rebuild, negotiation)
+- Stakeholder communication (board, customers, media, regulators)
+
+The LLM customizes these for your industry. Healthcare adds HIPAA considerations; Finance adds regulatory reporting; Manufacturing adds OT/IT convergence issues.
+
+**complications.md** provides realistic obstacles that emerge during incidents:
+- Second breach discovered during initial response
+- Backup systems found to be corrupted
+- Regulatory investigation announced
+- Supply chain impacts emerging
+- Media coverage and public pressure
+
+The LLM selects complications appropriate to your exercise style (fewer for Traditional discussions, more for Gamified challenges).
+
+**TTX-STYLE-GUIDE.md** enforces consistent formatting:
+- **Traditional:** Facilitator-paced, no time pressure, deep discussion (20-30 min per inject)
+- **Blended:** Moderate time pressure, balanced discussion (10 min discussion + 5 min decision)
+- **Gamified:** Strict timing, limited info, heavy scoring (3-5 min decisions with penalty timers)
+
+**AI-GENERATION-GUIDE.md** is the "constitution" of exercise generation:
+- 7 mandatory steps for creating exercises
+- Quality requirements for each inject (must include: Content 300-500 words, 4-6 Facilitator Prompts, 4-6 Evaluation Points, Expected Response)
+- 7 mandatory export markers that MUST appear in output (FACILITATOR-GUIDE, SCENARIO-NARRATIVE, INJECT-TIMELINE, DECISION-POINTS, COMPLICATIONS, DEBRIEF-TEMPLATE, PARTICIPANT-BRIEF)
+- Duration-specific requirements (2-hour minimum 8 injects, 4-hour minimum 15, etc.)
+- Emergency Mode standards (if GitHub access fails, LLM still produces 85-100% quality from training data)
+
+### Fallback Paths (If GitHub Access Fails)
+
+If the LLM cannot fetch reference libraries from GitHub (corporate firewall, temporary outage):
+
+**ERROR-HANDLING-GUIDE.md** provides three recovery options:
+
+1. **Retry (60-70% success):** Wait 5 minutes, paste STARTER-PROMPT again. Different server routing often succeeds.
+2. **Manual Copy-Paste (100% success):** Manually copy reference file contents into chat. Takes 10-15 minutes extra but guarantees success.
+3. **Emergency Mode (100% success, 80-85% quality):** Tell LLM "Generate without GitHub access, use your knowledge." LLM generates from training data—still professional and usable, slightly less customized.
+
+**Important:** Emergency Mode maintains full quality standards. Even without GitHub access, LLM must produce minimum inject count, all 7 export markers, complete decision frameworks, and no placeholder text.
+
+---
+
 ## How to Use This
 
 ### Step 1: Copy the Starter Prompt (30 seconds)
@@ -390,7 +490,9 @@ Independent of difficulty level, scenarios vary in how heavily they emphasize te
 - **Best for:** Technical teams, threat hunting exercises, advanced training
 - **Facilitator guidance:** Emphasizes technical decision-making and forensic methodology
 
-### Scenario Matrix
+### Scenario Matrix - Currently Available
+
+**These 4 scenarios are accessible via STARTER-PROMPT.md when you run the TTX Generator:**
 
 | Scenario | Difficulty | Technical Weight | Best For | Duration |
 |----------|-----------|-----------------|----------|----------|
@@ -398,10 +500,8 @@ Independent of difficulty level, scenarios vary in how heavily they emphasize te
 | **Ransomware Attack** | Intermediate | Moderate-Tech | All industries, full IR lifecycle | 2-4 hour, full-day |
 | **Data Breach - Customer PII** | Intermediate | Moderate-Tech | Customer-facing businesses, compliance focus | 4-hour, full-day |
 | **Insider Threat - Malicious** | Advanced | High-Tech | Technical teams, forensics focus | 4-hour, full-day |
-| **DDoS / Availability Attack** | Beginner-Intermediate | Moderate-Tech | Technology/SaaS, availability focus | 2-4 hour |
-| **Cloud Misconfiguration** | Intermediate | Moderate-Tech | Cloud-native businesses, DevOps teams | 2-4 hour |
-| **Supply Chain Compromise** | Advanced | High-Tech | Technology vendors, procurement teams | Full-day |
-| **Third-Party Vendor Compromise** | Advanced | Moderate-Tech | Any industry, vendor risk management | 4-hour, full-day |
+
+✅ **All available scenarios are now accessible via STARTER-PROMPT.md**
 
 ### How to Choose a Scenario
 
@@ -420,22 +520,50 @@ Independent of difficulty level, scenarios vary in how heavily they emphasize te
    - "Test decision-making" → Intermediate
    - "Challenge technical team" → Advanced, High-Tech
 
-### Current Available Scenarios
+### Currently Available Scenarios (Accessible via STARTER-PROMPT)
 
-**Ransomware Attack** (Intermediate, Moderate-Tech)
-- Phishing → credential compromise → ransomware deployment and extortion
-- Tests: Forensics, containment, business continuity, executive communication, legal coordination
-- Best for: All industries (healthcare, finance, retail, manufacturing, technology)
-- Duration options: 2-hour, 4-hour, or full-day exercises
+#### **Ransomware Attack** (Intermediate, Moderate-Tech)
+- **Threat progression:** Phishing → credential compromise → ransomware deployment and extortion
+- **Tests:** Forensics, containment, business continuity, executive communication, legal coordination
+- **Best for:** All industries (healthcare, finance, retail, manufacturing, technology)
+- **Duration options:** 2-hour, 4-hour, or full-day exercises
+- **Industry customizations:** Healthcare (HIPAA, patient care impact), Finance (PCI-DSS, banking systems), Retail (customer data, seasonal impact), Manufacturing (OT/IT convergence)
 
-**Additional Scenarios**
-- Insider Threat - Malicious (Advanced, High-Tech)
-- Data Breach - Customer PII Exfiltration (Intermediate, Moderate-Tech)
-- Business Email Compromise (Beginner-Intermediate, Low-Tech)
-- DDoS / Availability Attack (Beginner-Intermediate, Moderate-Tech)
-- Cloud Misconfiguration (Intermediate, Moderate-Tech)
-- Supply Chain Compromise (Advanced, High-Tech)
-- Third-Party Vendor Compromise (Advanced, Moderate-Tech)
+#### **Business Email Compromise** (Beginner-Intermediate, Low-Tech)
+- **Threat progression:** Social engineering → account compromise → fraudulent wire transfer
+- **Tests:** Fraud detection, communication, financial controls, executive coordination
+- **Best for:** All industries, especially new IR teams, mixed technical/non-technical groups
+- **Duration options:** 2-hour or 4-hour exercises
+
+#### **Data Breach - Customer PII** (Intermediate, Moderate-Tech)
+- **Threat progression:** External attack → data exfiltration → regulatory notification requirement
+- **Tests:** Scope determination, forensics, compliance, customer communication, legal coordination
+- **Best for:** Customer-facing businesses (retail, SaaS, fintech, healthcare), compliance-focused organizations
+- **Duration options:** 4-hour or full-day exercises
+
+#### **Insider Threat - Malicious Employee** (Advanced, High-Tech)
+- **Threat progression:** Unauthorized access → IP theft → backdoor installation → discovery
+- **Tests:** Forensic analysis, evidence handling, HR coordination, legal considerations, organizational politics
+- **Best for:** Technical teams, security-focused organizations, advanced IR training
+- **Duration options:** 4-hour or full-day exercises
+
+#### **Cloud Misconfiguration** (Intermediate, Moderate-Tech)
+- **Threat progression:** Misconfigured cloud storage → exposed data → discovery and regulatory notification
+- **Tests:** Cloud infrastructure assessment, data classification, compliance remediation, scope determination
+- **Best for:** Cloud-native organizations, DevOps teams, infrastructure-focused teams
+- **Duration options:** 2-hour or 4-hour exercises
+
+#### **Supply Chain Compromise** (Advanced, High-Tech)
+- **Threat progression:** Third-party vendor breach → supply chain contamination → cascading customer impact
+- **Tests:** Forensic analysis, supply chain risk assessment, customer communication, incident coordination
+- **Best for:** Technology vendors, organizations with complex supply chains, advanced technical teams
+- **Duration options:** Full-day exercises
+
+#### **Third-Party Vendor Compromise** (Advanced, Moderate-Tech)
+- **Threat progression:** Vendor system breach → organizational data exposure → vendor coordination
+- **Tests:** Vendor incident response, customer communication, business impact assessment, vendor relationships
+- **Best for:** Any industry with critical vendor dependencies, procurement teams, executive leadership
+- **Duration options:** 4-hour or full-day exercises
 
 ---
 
@@ -600,6 +728,104 @@ When proposing a new scenario, evaluate against these questions:
 - Multiple parallel incident threads
 - Conflicting stakeholder demands
 - Realistic organizational politics and communication challenges
+
+---
+
+## System Components & File Interactions
+
+This section explains what each file does, how they work together, and what happens when consultants use the TTX Generator.
+
+### Core Component Files
+
+| File | Purpose | Used By | When | Location |
+|------|---------|---------|------|----------|
+| **STARTER-PROMPT.md** | Entry point; 5 consultant questions + GitHub URLs | Every consultant | Start of workflow | Root directory |
+| **inject-library.md** | 30+ reusable inject templates (Detection, Investigation, Containment, Response, Recovery phases) | LLM during generation | After parsing questions | /components/ |
+| **decision-points.md** | 5 major decision frameworks (Containment, Ransom, Notification, Recovery, Communication) | LLM during generation | Customizing decisions for industry | /components/ |
+| **complications.md** | Realistic obstacles & complication templates calibrated by difficulty | LLM during generation | Adding challenges & surprises | /components/ |
+| **TTX-STYLE-GUIDE.md** | Formatting rules for Traditional vs. Blended vs. Gamified exercises | LLM during generation | Applying style-consistent formatting | /components/ |
+| **AI-GENERATION-GUIDE.md** | Step-by-step instructions for the LLM (7 mandatory steps, quality requirements) | LLM during generation | Dictates generation rules & quality standards | /components/ |
+| **ERROR-HANDLING-GUIDE.md** | Fallback options if GitHub access fails (Retry, Manual Copy, Emergency Mode) | Consultant when GitHub unavailable | Network issues, firewall blocks | /components/ |
+| **TTX-QUALITY-VALIDATOR.md** | MANDATORY quality gating (3-layer validation: Critical requirements, Quality requirements, Deliverable guidance) | LLM (enforced during generation), Consultants (optional verification) | After generation, before delivery | /components/ |
+| **DELIVERABLE-CREATION-GUIDE.md** | How to convert markdown to PowerPoint presentations | Consultant after generation | Post-generation publishing | /designGuides/ |
+
+### Scenario Files
+
+| File | Accessible via STARTER-PROMPT? | Status |
+|------|------|--------|
+| ransomware-scenario.md | ✅ YES | Actively used |
+| business-email-compromise.md | ✅ YES | Actively used |
+| data-breach-pii.md | ✅ YES | Actively used |
+| insider-threat.md | ✅ YES | Actively used |
+| cloud-misconfiguration.md | ✅ YES | Actively used |
+| supply-chain-compromise.md | ✅ YES | Actively used |
+| third-party-vendor-compromise.md | ✅ YES | Actively used |
+
+### How Components Interact During Generation
+
+When a consultant pastes STARTER-PROMPT and answers 5 questions:
+
+**Step 1: Question Intake (AI-GENERATION-GUIDE Step 1)**
+- LLM parses consultant's 5 answers
+- Extracts: Industry, duration, participant skill, exercise objective, style preference
+
+**Step 2: Inject Selection (AI-GENERATION-GUIDE Step 2)**
+- LLM reads **inject-library.md**
+- Selects injects matching duration: 8-12 for 2-hour, 15-20 for 4-hour, 25-35+ for full-day
+- Customizes each for industry (healthcare adds patient care considerations, finance adds regulatory reporting, etc.)
+
+**Step 3: Decision Point Customization (AI-GENERATION-GUIDE Step 3)**
+- LLM reads **decision-points.md**
+- Selects 4-5 decision frameworks from 5 available
+- Customizes options A/B/C for industry context
+- Adds Socratic facilitator prompts for each decision
+
+**Step 4: Complication Selection (AI-GENERATION-GUIDE Step 4)**
+- LLM reads **complications.md**
+- Selects 2-3 complications appropriate to style (fewer for Traditional, more for Gamified)
+- Assigns realistic triggers based on incident progression
+
+**Step 5: Style Application (AI-GENERATION-GUIDE Step 5)**
+- LLM reads **TTX-STYLE-GUIDE.md**
+- Applies formatting constraints: Traditional (no rush), Blended (moderate timing), Gamified (strict)
+- Enforces timing windows: Traditional 20-30 min discussions, Blended 10 min + 5 min, Gamified 3-5 min decisions
+- Adjusts scoring emphasis: None for Traditional, Light for Blended, Heavy for Gamified
+
+**Step 6: Output Generation (AI-GENERATION-GUIDE Steps 6-7)**
+- LLM generates complete 25-40 page facilitator guide
+- Includes all required components (see "Mandatory Output Format" below)
+- Embeds 7 export markers for section extraction
+- References DELIVERABLE-CREATION-GUIDE for post-generation PowerPoint conversion
+
+### Mandatory Output Format (AI-GENERATION-GUIDE Requirement)
+
+Every generated facilitator package MUST include:
+
+1. **Exercise Overview** - Objectives, duration, logistics, participant roles
+2. **Facilitator Preparation Checklist** - Week-before setup, materials needed, technical setup
+3. **Scenario Narrative** (Wrapped in EXPORT MARKER) - Industry-customized threat description, attack timeline
+4. **Inject Timeline** (Wrapped in EXPORT MARKER) - Table with 15-20 injects; each with:
+   - Inject number and timing
+   - Delivery method (email, phone call, alert notification, etc.)
+   - Content (300-500 words with realistic formatting)
+   - 4-6 Facilitator Prompts (Socratic questions)
+   - 4-6 Evaluation Points (observable behaviors to watch for)
+   - Expected Response (what good decisions look like)
+5. **Decision Points** (Wrapped in EXPORT MARKER) - 4-5 major decisions with:
+   - Situation (what just happened)
+   - Options A/B/C (legitimate alternatives with pros/cons)
+   - Socratic follow-up questions
+   - Evaluation criteria
+6. **Complications** (Wrapped in EXPORT MARKER) - 2-3 obstacles with:
+   - Trigger condition (when/why it happens)
+   - Description (what the complication is)
+   - Impact on decisions
+   - Facilitator guidance
+7. **Debrief Structure** (Wrapped in EXPORT MARKER) - Post-exercise review framework
+8. **Participant Materials** (Wrapped in EXPORT MARKER) - Non-spoiler welcome letter, ground rules, initial briefing
+9. **Next Steps: Creating Professional Deliverables** - References DELIVERABLE-CREATION-GUIDE
+
+All 7 export markers are MANDATORY. LLM validates own output before delivery.
 
 ---
 
