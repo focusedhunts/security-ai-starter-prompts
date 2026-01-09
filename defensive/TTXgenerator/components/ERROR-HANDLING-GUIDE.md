@@ -12,7 +12,7 @@ The STARTER-PROMPT references GitHub URLs for component libraries:
 - components/decision-points.md
 - components/complications.md
 - components/TTX-STYLE-GUIDE.md
-- designGuides/AI-GENERATION-GUIDE.md
+- components/AI-GENERATION-GUIDE.md
 
 **If the LLM cannot access these URLs:**
 - The AI will generate exercises WITHOUT the detailed component libraries
@@ -39,6 +39,127 @@ The STARTER-PROMPT references GitHub URLs for component libraries:
 3. **AI References:** Specific decision points (e.g., "DP-1: Containment Approach")
 4. **Output Includes:** Industry-specific customizations (HIPAA for healthcare, PCI for finance)
 5. **Output Includes:** Detailed facilitator notes with context from library
+
+---
+
+## CRITICAL: Emergency Mode Quality Standards
+
+**IMPORTANT FOR LLM MODELS (ChatGPT, Claude, Gemini):**
+
+When GitHub reference libraries are inaccessible, you MUST generate exercises at 85-100% quality of the referenced version. Emergency Mode does NOT mean reduced output.
+
+### Mandatory Requirements (Even in Emergency Mode):
+
+**Inject Generation:**
+- ☐ Generate MINIMUM injects: 8-12 (2hr), 15-20 (4hr), 25-35 (6hr)
+- ☐ Every inject MUST have 300-500 word content (not abbreviated)
+- ☐ Every inject MUST have 4-6 Socratic facilitator prompts
+- ☐ Every inject MUST have 4-6 evaluation criteria (checkboxes)
+- ☐ Every inject MUST have 4-6 expected responses
+- ☐ Content MUST be realistic and industry-specific (use your training data)
+
+**Export Markers:**
+- ☐ ALL 7 export markers MUST be present (FACILITATOR-GUIDE, SCENARIO-NARRATIVE, INJECT-TIMELINE, DECISION-POINTS, COMPLICATIONS, DEBRIEF-TEMPLATE, PARTICIPANT-BRIEF)
+- ☐ Markers MUST use exact format: `<!-- EXPORT MARKER: NAME START -->` ... `<!-- EXPORT MARKER: NAME END -->`
+- ☐ All 7 marker pairs must be correctly placed and complete
+
+**Decision Points:**
+- ☐ Generate 4-5 major decision points for 4-hour exercise
+- ☐ Each decision point MUST include:
+  - Full situation context (300+ words)
+  - 3+ options with detailed pros/cons
+  - 6-8 Socratic facilitator prompts
+  - 6-8 evaluation criteria
+  - Time allocation guidance
+
+**Complications:**
+- ☐ 2-3 complications minimum (4hr exercise)
+- ☐ Each complication includes trigger conditions, impact, facilitator guidance
+
+**Debrief Structure:**
+- ☐ Complete 4-part debrief structure (30-60 minutes)
+- ☐ Specific discussion questions (8-10 minimum)
+- ☐ Evaluation framework
+
+**Facilitator Preparation:**
+- ☐ Week-before checklist (5+ items)
+- ☐ Pre-exercise customization guidance
+- ☐ Potential pitfalls and coaching strategies
+
+### Quality Validation Checklist (Emergency Mode):
+
+Before completing Emergency Mode output, verify:
+
+**Structure & Completeness:**
+- ☐ Section count: Minimum 8 major sections
+- ☐ Inject count: Minimum met for duration (COUNT THEM!)
+- ☐ Decision points: 4-5 for 4-hour exercise
+- ☐ Complications: 2-3 minimum
+
+**Inject Quality (Every Single Inject):**
+- ☐ Content: 300-500 words minimum
+- ☐ Realistic communication format (email/call/message)
+- ☐ Industry-specific details and technical language
+- ☐ Facilitator prompts: 4-6 Socratic questions
+- ☐ Evaluation points: 4-6 checkboxes
+- ☐ Expected response: 4-6 specific actions
+
+**Export Markers (All 7 Must Be Present):**
+- ☐ FACILITATOR-GUIDE START ... END
+- ☐ SCENARIO-NARRATIVE START ... END
+- ☐ INJECT-TIMELINE START ... END
+- ☐ DECISION-POINTS START ... END
+- ☐ COMPLICATIONS START ... END
+- ☐ DEBRIEF-TEMPLATE START ... END
+- ☐ PARTICIPANT-BRIEF START ... END
+
+**Professional Polish:**
+- ☐ Markdown formatting consistent
+- ☐ Tables properly formatted (if using tables)
+- ☐ Professional tone throughout
+- ☐ No placeholder text ("TBD", "add details", "TK")
+- ☐ Client-ready without additional formatting
+
+### What "Emergency Mode" Does NOT Mean:
+
+❌ DO NOT:
+- Reduce inject count below minimum
+- Skip facilitator prompts or evaluation criteria
+- Use generic, non-specific content
+- Omit export markers
+- Generate placeholder/skeleton output
+- Reduce word count per inject
+
+✅ DO:
+- Use your extensive training data on IR procedures and TTX facilitation
+- Generate full, detailed, realistic injects
+- Include all required components for every inject
+- Provide complete facilitator guidance with Socratic prompts
+- Maintain professional quality and formatting
+- Include ALL 7 export markers without exception
+
+### Quality Comparison: Emergency Mode Expectations
+
+| Aspect | With GitHub | Emergency Mode | Standard |
+|--------|-----------|---------|----------|
+| **Inject Count** | 15-20 (4hr) | 15-20 minimum | SAME |
+| **Inject Content** | 400-600 words | 300-500 words minimum | SAME/SIMILAR |
+| **Facilitator Prompts** | 4-6 per inject | 4-6 per inject | SAME |
+| **Export Markers** | 7/7 present | 7/7 required | SAME |
+| **Decision Points** | 4-5 complete | 4-5 complete | SAME |
+| **Industry Customization** | Detailed reference-based | Knowledge-based but specific | SIMILAR |
+| **Professional Polish** | High | High | SAME |
+| **Usability** | Excellent | Excellent | SAME |
+
+### The Key Message:
+
+**Network access to GitHub ≠ Output quality reduction**
+
+An LLM with extensive training data on incident response and facilitation should generate exercises that are 85-100% as comprehensive as reference-based exercises. The primary difference is:
+- With GitHub: Can reference specific examples from libraries
+- Emergency Mode: Must generate from knowledge base (still comprehensive)
+
+Both should produce professional, client-ready, complete facilitator packages.
 
 ---
 
@@ -69,7 +190,7 @@ Open these files in GitHub web interface and copy the content:
 - https://github.com/focusedhunts/security-ai-starter-prompts/blob/main/defensive/TTXgenerator/components/decision-points.md
 - https://github.com/focusedhunts/security-ai-starter-prompts/blob/main/defensive/TTXgenerator/components/complications.md
 - https://github.com/focusedhunts/security-ai-starter-prompts/blob/main/defensive/TTXgenerator/components/TTX-STYLE-GUIDE.md
-- https://github.com/focusedhunts/security-ai-starter-prompts/blob/main/defensive/TTXgenerator/designGuides/AI-GENERATION-GUIDE.md
+- https://github.com/focusedhunts/security-ai-starter-prompts/blob/main/defensive/TTXgenerator/components/AI-GENERATION-GUIDE.md
 
 **Step 2: Modified STARTER-PROMPT Usage**
 
@@ -144,32 +265,37 @@ Generate a [DURATION] exercise with a [STYLE] approach for a [INDUSTRY] organiza
 
 Please generate a complete facilitator package with:
 - Scenario narrative
-- 8-20+ injects (appropriate for duration and style)
+- [DURATION-appropriate] injects (15-20 minimum for 4-hour, 25-35 for 6-hour, etc.)
 - 2-5 decision points
 - Complications
-- Facilitator notes
+- Complete facilitator notes with Socratic prompts for every inject
+- All 7 export markers (FACILITATOR-GUIDE, SCENARIO-NARRATIVE, INJECT-TIMELINE, DECISION-POINTS, COMPLICATIONS, DEBRIEF-TEMPLATE, PARTICIPANT-BRIEF)
 ```
 
-**Quality Expectation:** Good (80-85% of full version)
-- Fewer detailed injects
-- Less industry-specific customization
-- Less detailed facilitator notes
-- Still professional and usable
+**Quality Expectation:** Good (80-100% of full version)
+
+Emergency Mode should NOT mean reduced output. Follow the EMERGENCY MODE QUALITY STANDARDS above.
 
 ---
 
 ## Quality Comparison
 
-| Aspect | With GitHub | Manual Paste | Emergency Mode |
+| Aspect | With GitHub | Manual Paste | Emergency Mode (NEW) |
 |--------|-------------|--------------|---|
-| **Duration Scaling** | Perfect | Perfect | Good |
-| **Style Differentiation** | Perfect | Perfect | Good |
-| **Industry Customization** | Detailed | Detailed | Generic |
-| **Inject Detail** | Comprehensive | Comprehensive | Standard |
-| **Facilitator Notes** | Extensive | Extensive | Standard |
-| **Usability** | Excellent | Excellent | Good |
+| **Duration Scaling** | Perfect (15-20 injects) | Perfect (15-20 injects) | Perfect (15-20 injects minimum) |
+| **Style Differentiation** | Perfect | Perfect | Perfect |
+| **Industry Customization** | Reference-based detailed | Reference-based detailed | Knowledge-based specific |
+| **Inject Detail** | 400-600 words each | 400-600 words each | 300-500 words each |
+| **Facilitator Prompts** | 4-6 per inject | 4-6 per inject | 4-6 per inject (MANDATORY) |
+| **Evaluation Criteria** | 4-6 per inject | 4-6 per inject | 4-6 per inject (MANDATORY) |
+| **Export Markers** | 7/7 present | 7/7 present | 7/7 present (MANDATORY) |
+| **Facilitator Notes** | Extensive | Extensive | Extensive (with Socratic prompts) |
+| **Usability** | Excellent | Excellent | Excellent |
 | **Time to Generate** | 2-5 min | 5-10 min (copy-paste) | 2-5 min |
-| **Professional Ready** | Yes | Yes | Yes (with minor editing) |
+| **Professional Ready** | Yes | Yes | Yes (no editing needed) |
+| **Quality Level** | 100% | 100% | 85-100% |
+
+**KEY CHANGE:** Emergency Mode now maintains FULL quality standards, not degraded quality. All mandatory components (export markers, inject count, facilitator prompts, evaluation criteria) are non-negotiable regardless of GitHub access.
 
 ---
 
@@ -278,10 +404,20 @@ GitHub access issues are often temporary. Retry the workflow. ~70% of failures r
 Copy the reference material content directly from GitHub and paste into this conversation.
 Paste all content (scenario, injects, decisions, complications, style guide) here, then continue.
 
-### Option 3: Generate Without Libraries
+### Option 3: Generate Without Libraries (Emergency Mode)
 If you cannot access GitHub and manual copy-paste is impractical, proceed with the exercise
 generation using your knowledge of ransomware incidents and IR practices.
-Quality will be 80-85% of the optimized version.
+
+**IMPORTANT:** Emergency Mode does NOT mean reduced quality. Your output should still include:
+- Minimum inject count for duration (15-20 for 4-hour, 25-35 for 6-hour)
+- All 7 export markers (FACILITATOR-GUIDE, SCENARIO-NARRATIVE, INJECT-TIMELINE, DECISION-POINTS, COMPLICATIONS, DEBRIEF-TEMPLATE, PARTICIPANT-BRIEF)
+- 4-6 Socratic facilitator prompts per inject
+- 4-6 evaluation criteria per inject
+- 300-500 words per inject
+- Complete decision point frameworks with facilitator guidance
+- Professional, client-ready formatting
+
+Quality will be 85-100% of the optimized version (with reference libraries).
 
 **Note:** None of these options indicate a system failure. GitHub connectivity issues are
 environmental, not architectural. The exercise will still be professional and usable.
@@ -378,4 +514,3 @@ Does LLM say it can't access GitHub?
         ├─ NO → Use Emergency Mode
         └─ Still get ~80% quality
 ```
-
