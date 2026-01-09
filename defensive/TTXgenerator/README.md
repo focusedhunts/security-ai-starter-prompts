@@ -1,8 +1,8 @@
 # TTX Generator - Conversational Tabletop Exercise Creator
 
-**Create customized incident response tabletop exercises in 20-30 minutes using AI.**
+**Create customized incident response tabletop exercises in 5-10 minutes using AI.**
 
-This tool lets you generate professional exercise facilitator packages by having a natural conversation with ChatGPT, Claude, or any LLM. Answer five simple questions, and get a complete customized exercise ready for delivery.
+This tool lets you generate professional exercise facilitator packages by having a natural conversation with ChatGPT, Claude, or any LLM. Answer six simple questions about your client and desired exercise, and get a complete customized exercise ready for delivery.
 
 ---
 
@@ -14,7 +14,7 @@ This tool lets you generate professional exercise facilitator packages by having
 
 The TTX Generator is a **conversational prompt** that works with any AI language model to create incident response tabletop exercises (TTX) tailored to your client's specific context.
 
-Copy a short prompt, paste into your preferred AI tool, answer five questions about your client, and receive a complete facilitator package in 20-30 minutes. The package includes customized scenario narrative, inject timeline with delivery guidance, key decision points, facilitator notes, and participant materials.
+Copy a short prompt, paste into your preferred AI tool, answer six questions (including incident scenario type, client context, objectives, duration, participant profile, and exercise style), and receive a complete facilitator package in 20-30 minutes. The package includes customized scenario narrative, inject timeline with delivery guidance, key decision points, facilitator notes, and participant materials.
 
 ---
 
@@ -30,29 +30,34 @@ Open [STARTER-PROMPT.md](STARTER-PROMPT.md) and copy the entire prompt.
 - Paste the prompt
 - Start the conversation
 
-### Step 3: Answer 5 Simple Questions (5-10 minutes)
+### Step 3: Answer 6 Simple Questions (5-10 minutes)
 
 The AI will ask you:
 
-1. **"Tell me about your client in 2-3 sentences."**
+1. **"Which incident scenario matches your client's risk profile?"**
+   - Answer: Choose one scenario type from available options
+   - Options: Ransomware Attack, Business Email Compromise, Data Breach - Customer PII, Insider Threat - Malicious Employee, or others
+   - Example: "Ransomware Attack - our client was recently targeted and wants to test their response capability"
+
+2. **"Tell me about your client in 2-3 sentences."**
    - Answer: Brief description (industry, org size, IR maturity)
    - Example: "250-bed hospital system, moderate IR maturity, had ransomware near-miss last quarter"
 
-2. **"What's your primary exercise objective?"**
-   - Answer: What capability do you want to test? (IR plan validation, communication, decision-making, regulatory compliance, etc.)
+3. **"What's your primary exercise objective?"**
+   - Answer: What capability do you want to test? (IR plan validation, communication, decision-making, regulatory compliance, crisis management, etc.)
    - Example: "Test IR plan effectiveness, especially cross-functional communication under pressure"
 
-3. **"How long is the exercise?"**
-   - Answer: 2-hour, 4-hour, or full-day format
+4. **"How long is the exercise?"**
+   - Answer: 2-hour, 4-hour, 6-hour, or full-day format
    - Example: "4 hours, virtual format"
 
-4. **"What skill level are participants?"**
-   - Answer: Beginner, intermediate, advanced, or mixed
-   - Example: "Mixed—SOC team is intermediate, executives are non-technical"
+5. **"Who's in the room (participant profile)?"**
+   - Answer: Mostly technical, mostly executive, or mixed; approximate number
+   - Example: "Mixed—SOC team is intermediate, executives are non-technical, about 30 people across breakout rooms"
 
-5. **"What detail level do you need?"**
-   - Answer: Outline (5-10 page overview), Storyboard (15-25 pages with full narrative), or Full Package (40-60 pages with all facilitator materials)
-   - Example: "Full facilitator package with inject timeline and participant materials"
+6. **"How do participants prefer to learn (exercise style)?"**
+   - Answer: Traditional (discussion-focused), Blended (balanced), or Gamified (high-intensity with scoring)
+   - Example: "Blended - they want some discussion time but also want to feel time pressure"
 
 ### Step 4: AI Generates Your Package (2-3 minutes)
 
@@ -77,35 +82,45 @@ The AI automatically:
 ```
 You: [Paste STARTER-PROMPT.md]
 
-AI: "Let's get started. Please tell me about your client in 2-3 sentences:"
+AI: "Let's get started. First, which incident scenario matches your client's risk profile?
+    Available options:
+    1. Ransomware Attack (Intermediate)
+    2. Business Email Compromise (Beginner-Intermediate)
+    3. Data Breach - Customer PII (Intermediate)
+    4. Insider Threat - Malicious Employee (Advanced)"
+
+You: "Ransomware Attack - they had a near-miss last quarter and want to test their response capability."
+
+AI: "Good choice. Now tell me about your client in 2-3 sentences:"
 
 You: "Healthcare organization, 300-bed hospital system in the Midwest.
      Moderate IR maturity—they have a plan but limited incident response
      team experience. Had a ransomware near-miss last quarter that spooked the board."
 
-AI: "Great context. What's your primary exercise objective?"
+AI: "I understand. What's your primary exercise objective?"
 
 You: "Test their IR plan effectiveness, especially communication and decision-making
      under pressure. Want to see how well IT, security, and executive leadership
      can coordinate during a real-time crisis."
 
-AI: "Understood. How long is the exercise?"
+AI: "Clear objective. How long is the exercise?"
 
 You: "4 hours, virtual format. About 25-30 people participating across multiple breakout rooms."
 
-AI: "What skill level are the participants?"
+AI: "Got it. Who's in the room? (Participant profile)"
 
 You: "Mixed. IT ops and security team are intermediate. Executives (C-suite, board)
      are non-technical but engaged. No previous TTX experience."
 
-AI: "What detail level do you need?"
+AI: "How do participants prefer to learn? Traditional (discussion-focused),
+     Blended (balanced), or Gamified (high-intensity with scoring)?"
 
-You: "Full facilitator package. We want everything—scenario, injects with timing,
-     decision points, facilitator guidance, and materials for participants."
+You: "Blended - they want some discussion time but also want to feel time pressure
+     and see consequences of their decisions."
 
 AI: "Perfect. Let me generate that for you. I'm reading the ransomware scenario,
      applying healthcare-specific customizations (HIPAA, patient care impact),
-     and creating a 4-hour exercise with 18-20 injects and decision points...
+     and creating a 4-hour Blended exercise with 18-20 injects and 4-5 decision points...
 
      [Generates complete facilitator package]
 ```
@@ -592,14 +607,21 @@ When proposing a new scenario, evaluate against these questions:
 
 ### How It Works
 
-1. You paste a SHORT prompt (15 lines) into an AI tool
+1. You paste a SHORT prompt (25 lines) into an AI tool
 2. The AI reads the scenario library and customizations from GitHub
-3. The AI asks five clarifying questions to understand your client context
+3. The AI asks six clarifying questions to understand your client context:
+   - Incident scenario type (required)
+   - Client context (industry, size, maturity)
+   - Exercise objective (what to test)
+   - Duration & format (2-hour, 4-hour, 6-hour, full-day)
+   - Participant profile (roles and experience)
+   - Exercise style (Traditional, Blended, Gamified)
 4. The AI dynamically assembles a custom exercise using:
    - Core scenario narrative matching your chosen threat type
    - Industry-specific customizations (healthcare, finance, retail, manufacturing, tech)
    - Complexity adjustments based on participant skill level and objectives
    - Inject templates and complications matched to exercise duration
+   - Difficulty and technical weight calibrated to team experience
 5. Output is markdown-formatted with built-in export markers for team sharing and PowerPoint conversion
 
 ### Requirements
@@ -740,8 +762,9 @@ Before finalizing Emergency Mode output:
 
 ## Key Features
 
-- **Five-Question Customization:** Answer simple questions about your client, get a tailored exercise
-- **Multiple Output Formats:** Outline (5-10 pages), Storyboard (15-25 pages), or Full Facilitator Package (40-60 pages)
+- **Six-Question Customization:** Answer simple questions about your client (scenario type, context, objectives, duration, participants, style), get a tailored exercise
+- **Scenario Selection:** Choose from multiple incident scenarios (Ransomware, BEC, Data Breach, Insider Threat) matched to your client's risk profile
+- **Difficulty & Technical Weight Classification:** Scenarios labeled by difficulty level (Beginner-Intermediate, Intermediate, Advanced) and technical focus (Low-Tech, Moderate-Tech, High-Tech)
 - **Three Exercise Styles:** Traditional (discussion), Blended (balanced), Gamified (high-intensity)
 - **Industry-Specific Customization:** Healthcare (HIPAA), Finance (PCI-DSS), Retail, Manufacturing, Technology
 - **Export & Sharing:** Built-in export markers for easy team sharing and markdown extraction
