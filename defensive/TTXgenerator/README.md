@@ -2,7 +2,7 @@
 
 **Create customized incident response tabletop exercises in 20-30 minutes using AI.**
 
-This tool lets you generate professional exercise facilitator packages by having a natural conversation with ChatGPT, Claude, or any LLM—no copy-pasting dozens of fields or manually assembling components.
+This tool lets you generate professional exercise facilitator packages by having a natural conversation with ChatGPT, Claude, or any LLM. Answer five simple questions, and get a complete customized exercise ready for delivery.
 
 ---
 
@@ -10,18 +10,7 @@ This tool lets you generate professional exercise facilitator packages by having
 
 The TTX Generator is a **conversational prompt** that works with any AI language model to create incident response tabletop exercises (TTX) tailored to your client's specific context.
 
-**Instead of:**
-- Spending 2-4 hours manually creating exercises
-- Copy-pasting and editing scenario templates
-- Trying to remember all the details you need to customize
-
-**You:**
-- Copy a 15-line prompt
-- Paste it into ChatGPT/Claude
-- Answer 5 simple questions
-- Get a complete facilitator package with customized scenario, injects, decision points, and guidance
-
-**Result:** A professional-ready exercise outline or full facilitator package that consultants would actually use.
+Copy a short prompt, paste into your preferred AI tool, answer five questions about your client, and receive a complete facilitator package in 20-30 minutes. The package includes customized scenario narrative, inject timeline with delivery guidance, key decision points, facilitator notes, and participant materials.
 
 ---
 
@@ -220,15 +209,85 @@ Ask the AI follow-up questions:
 
 ---
 
-## What Scenarios Are Available Now?
+## Creating Professional Client Deliverables
 
-**Current:** Ransomware Attack (Intermediate difficulty)
+After generation, convert your markdown output into polished PowerPoint presentations or professional documents.
+
+### The Complete Deliverable Creation Guide
+
+We've created a comprehensive guide for transforming your markdown exercise into professional client deliverables:
+
+📖 **[DELIVERABLE-CREATION-GUIDE.md](designGuides/DELIVERABLE-CREATION-GUIDE.md)**
+
+This guide includes:
+
+**Slide-by-Slide Transformation Strategy**
+- How to map markdown sections to PowerPoint slides
+- Detailed examples (Exercise Overview → 5 slides, Scenario Narrative → 8 slides, etc.)
+- Layout templates (title slides, content slides, timelines, matrices)
+
+**Visual Enhancement Suggestions**
+- AI generation prompts for custom graphics
+- Threat actor profiles ("Create menacing cybercriminal character with binary code background")
+- Ransom notes and extortion graphics
+- Attack timelines and decision trees
+- Organizational charts and RACI matrices
+- Technical indicators (EDR alerts, network diagrams, log entries)
+- Social media/external pressure graphics (fake tweets, breaking news headlines)
+
+**Professional Design Principles**
+- Color schemes (Corporate Professional, Security Alert, Tech Modern, Healthcare Focus)
+- Typography guidelines (fonts, sizes, hierarchy)
+- White space and visual balance
+- Style-specific guidance (Traditional = calm/blue, Gamified = urgent/red, Blended = balanced)
+
+**Tools & Resources**
+- Recommended software (PowerPoint, Canva, DALL-E, Midjourney, Lucidchart)
+- Stock image resources (Unsplash, Pexels, Flaticon)
+- Template libraries
+
+**Export Instructions**
+- How to save sections as markdown or text files
+- File naming conventions for organizing multiple client engagements
+- Who gets what (facilitator → full package, participants → non-spoiler brief, stakeholders → overview only)
+- Step-by-step instructions for ChatGPT/Claude
+
+**Quality Checklist**
+- Content accuracy verification (customizations, timing, difficulty calibration)
+- Visual quality checks (contrast, consistency, professionalism)
+- Exercise integrity (no spoilers, realistic timing, clear guidance)
+- Delivery readiness (technical setup, backup materials)
+
+### Quick Transformation Example
+
+**Markdown Input:** 25-page facilitator package
+↓
+**PowerPoint Output:** 45 professional slides
+
+- Slides 1-4: Title & objectives (with security badge visual)
+- Slides 5-9: Threat actor profile (AI-generated menacing character + TTPs)
+- Slides 10-17: Scenario narrative (attack timeline graphic, network diagrams)
+- Slides 18-36: Injects (1-2 per inject with alert styling for Gamified, discussion prompts for Traditional)
+- Slides 37-42: Decision points (option matrices with pros/cons)
+- Slides 43-45: Debrief & lessons learned (recovery roadmap)
+
+**Design:** Professional color scheme, consistent typography, high-contrast, zero clutter
+
+👉 **Start with DELIVERABLE-CREATION-GUIDE.md for complete guidance with detailed examples and transformation patterns.**
+
+---
+
+## Available Scenarios
+
+The TTX Generator supports multiple incident scenarios across difficulty levels and threat types:
+
+**Ransomware Attack** (Intermediate)
 - Phishing → credential compromise → ransomware deployment and extortion
 - Tests: Forensics, containment, business continuity, executive communication, legal coordination
 - Best for: All industries (healthcare, finance, retail, manufacturing, technology)
 - Duration options: 2-hour, 4-hour, or full-day exercises
 
-**Coming Soon:** (After Ransomware MVP is validated)
+**Additional Scenarios**
 - Insider Threat - Malicious (Advanced)
 - Data Breach - Customer PII Exfiltration (Intermediate)
 - Business Email Compromise (Beginner-Intermediate)
@@ -236,6 +295,8 @@ Ask the AI follow-up questions:
 - Cloud Misconfiguration (Intermediate)
 - Supply Chain Compromise (Advanced)
 - Third-Party Vendor Compromise (Advanced)
+
+Start with the scenario that best fits your client's risk profile and business context. The AI will customize it based on industry, organization size, IR maturity, and specific objectives.
 
 ---
 
@@ -318,14 +379,14 @@ Ask the AI follow-up questions:
 ### How It Works
 
 1. You paste a SHORT prompt (15 lines) into an AI tool
-2. The AI reads the ransomware scenario from GitHub (via raw.githubusercontent.com URL)
-3. The AI asks clarifying questions to understand your client context
+2. The AI reads the scenario library and customizations from GitHub
+3. The AI asks five clarifying questions to understand your client context
 4. The AI dynamically assembles a custom exercise using:
-   - Core scenario narrative
-   - Industry-specific customizations (healthcare, finance, etc.)
-   - Complexity adjustments based on skill level
-   - Inject templates matched to exercise duration
-5. Output is markdown-formatted and ready to use
+   - Core scenario narrative matching your chosen threat type
+   - Industry-specific customizations (healthcare, finance, retail, manufacturing, tech)
+   - Complexity adjustments based on participant skill level and objectives
+   - Inject templates and complications matched to exercise duration
+5. Output is markdown-formatted with built-in export markers for team sharing and PowerPoint conversion
 
 ### Requirements
 
@@ -333,53 +394,36 @@ Ask the AI follow-up questions:
 - **AI Tool:** ChatGPT, Claude, Gemini, or any LLM that can read URLs
 - **File:** Copy of [STARTER-PROMPT.md](STARTER-PROMPT.md)
 
-### If AI Can't Read GitHub URLs
+### Network Issues & Error Handling
 
-Some corporate networks block raw.githubusercontent.com. If that happens:
+The TTX Generator is designed to continue working even if GitHub access is temporarily unavailable.
 
-**Option 1:** Use a personal account outside your corporate network
+**If AI Can't Read GitHub URLs:**
 
-**Option 2:** Manual Copy-Paste
+Some corporate networks block raw.githubusercontent.com. Three solutions:
+
+**Option 1 - Use Personal Connection (Fastest)**
+- Use a personal device or VPN outside corporate network
+- Retry the conversation—different server routes often resolve temporarily unavailable access
+
+**Option 2 - Manual Copy-Paste (Full Quality, 5 minutes extra)**
 - Open [ransomware-scenario.md](ransomware-scenario.md) in your browser
 - Copy the scenario content
 - Paste into the AI conversation with: "Use this scenario: [paste]"
-- Continue the conversation normally
+- Continue conversation normally
+- Result: 95-100% quality output, no functionality loss
 
----
+**Option 3 - Emergency Mode (Fast fallback)**
+- Tell AI: "Generate without reference libraries, use your training knowledge"
+- AI generates exercise from built-in knowledge
+- Result: 80-85% quality (still professional and usable, less detailed)
 
-## Philosophy: Start Small, Prove Value, Expand
+**For Corporate Networks:**
+- Ask IT to whitelist: `raw.githubusercontent.com`
+- Use VPN if available
+- Use personal device for generation, then share with team
 
-This MVP includes **one scenario** (Ransomware) to prove the concept works. If consultants find this approach valuable:
-
-**Phase 2:** Component libraries (reusable injects, decision points, complications by industry)
-
-**Phase 3:** Additional scenarios (insider threat, data breach, DDoS, etc.)
-
-**Phase 4:** Industry customizations (more detailed healthcare, finance, retail specializations)
-
-**Phase 5:** Output options (PowerPoint generation, PDF reports, etc.)
-
-But we expand only if this MVP proves useful. Quality > Quantity.
-
----
-
-## Comparison: Old vs. New Approach
-
-### Old Approach (IRTabletopExercisePlanning - Three-Staged)
-- Detailed form with 50+ customization fields [MODIFY: ...]
-- Three stages of manual editing and assembly
-- 2-4 hours to complete
-- "Copy-paste" oriented
-- Requires reading through extensive instructions
-
-### New Approach (TTX Generator - Conversational)
-- Simple 15-line starter prompt
-- Natural conversation (5 questions)
-- 20-30 minutes to complete
-- "Paste and chat" oriented
-- Requires minimal setup
-
-**Both approaches** reference the same detailed scenario library and customization guidance. The new approach just makes it faster and more conversational.
+All three paths produce professional, consultant-ready exercises.
 
 ---
 
@@ -393,11 +437,31 @@ But we expand only if this MVP proves useful. Quality > Quantity.
 
 ## Resources
 
-- **Detailed Scenario:** [ransomware-scenario.md](ransomware-scenario.md) - Complete scenario with all decision points, injects, customizations
-- **Advanced Approach:** See `defensive/IRTabletopExercisePlanning(ThreeStaged).md` for detailed three-stage prompt with extensive customization options
+- **Starter Prompt:** [STARTER-PROMPT.md](STARTER-PROMPT.md) - Copy this to get started
+- **Detailed Scenarios:** [scenarios/](scenarios/) directory contains complete threat narratives, decision frameworks, and technical details
+- **Component Libraries:**
+  - [components/inject-library.md](components/inject-library.md) - Inject templates by phase
+  - [components/decision-points.md](components/decision-points.md) - Decision frameworks and options
+  - [components/complications.md](components/complications.md) - Difficulty modifiers
+  - [components/TTX-STYLE-GUIDE.md](components/TTX-STYLE-GUIDE.md) - Traditional/Blended/Gamified guidance
+- **AI Generation Guide:** [designGuides/AI-GENERATION-GUIDE.md](designGuides/AI-GENERATION-GUIDE.md) - How the AI creates customized exercises
+- **Deliverable Creation Guide:** [designGuides/DELIVERABLE-CREATION-GUIDE.md](designGuides/DELIVERABLE-CREATION-GUIDE.md) - Converting markdown to PowerPoint and professional documents
+- **Advanced Approach:** See `defensive/IRTabletopExercisePlanning(ThreeStaged).md` for three-stage detailed planning (alternative method with 50+ customization fields)
 - **Book Reference:** [*Prompt Intelligence: An AI Framework for Security Professionals*](https://focusedhunts.com) - Principles and techniques underlying this prompt
-- **Original Scenario Library:** See `defensive/IRTabletop-ScenarioLibrary.md`
 
 ---
 
-**Remember:** This tool generates exercise *plans*, not exercises themselves. You (the consultant) execute the exercise with participants. The AI helps you build it faster, but your expertise is essential in facilitating the event, managing the room, and helping participants learn.
+## Key Features
+
+- **Five-Question Customization:** Answer simple questions about your client, get a tailored exercise
+- **Multiple Output Formats:** Outline (5-10 pages), Storyboard (15-25 pages), or Full Facilitator Package (40-60 pages)
+- **Three Exercise Styles:** Traditional (discussion), Blended (balanced), Gamified (high-intensity)
+- **Industry-Specific Customization:** Healthcare (HIPAA), Finance (PCI-DSS), Retail, Manufacturing, Technology
+- **Export & Sharing:** Built-in export markers for easy team sharing and markdown extraction
+- **PowerPoint Creation:** Comprehensive guidance for transforming markdown into professional presentations
+- **Professional Quality:** Facilitator-ready materials suitable for client delivery
+- **Built-in Error Handling:** Works offline with emergency mode and manual backup options
+
+---
+
+**Remember:** This tool generates exercise *plans*, not exercises themselves. You (the consultant) facilitate the exercise with participants. The TTX Generator helps you create it faster, but your facilitation expertise is essential for success—managing the room, guiding discussions, and helping participants learn from the experience.

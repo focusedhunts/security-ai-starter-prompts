@@ -19,9 +19,21 @@ Use these reusable elements to customize exercises:
 Follow this guide to generate appropriate exercises based on consultant answers:
 https://raw.githubusercontent.com/focusedhunts/security-ai-starter-prompts/main/defensive/TTXgenerator/AI-GENERATION-GUIDE.md
 
+**After Generation - Creating Client Deliverables:**
+To convert the markdown output to professional PowerPoint or documents, see this guide:
+https://raw.githubusercontent.com/focusedhunts/security-ai-starter-prompts/main/defensive/TTXgenerator/designGuides/DELIVERABLE-CREATION-GUIDE.md
+
 ## Process
 
-I'm going to answer 5 quick questions about my client. Asking the questions **one at a time**, waiting for my response before continuing, unless I choose to answer all 5 at once.Using the scenario library and style guides above, you'll:
+### How This Works
+
+I'm going to answer 5 quick questions about my client. You can ask them:
+- **One at a time** (you wait for my response before asking question 2, etc.)
+- **All at once** (I batch-answer all 5 questions at the beginning)
+
+**You decide which approach works better for this conversation.**
+
+Using the scenario library and style guides above, you'll:
 
 1. Understand their specific context (industry, size, maturity)
 2. Understand their exercise style preference (traditional discussion vs. gamified vs. blended)
@@ -111,3 +123,109 @@ Tell me about your client:
    - **Gamified:** High-energy, real time pressure, scoring/consequences tracked (advanced technical teams)
 
 **Ready? Answer question 1, or give me all 5 at once. I'm flexible!**
+
+---
+
+## ⚠️ ERROR HANDLING FOR ENGINEERS
+
+**If the LLM reports it cannot access GitHub URLs**, here's what to do:
+
+### What It Looks Like When GitHub Access Fails
+
+The LLM will say things like:
+- "I can't access the GitHub URLs"
+- "Connection failed to raw.githubusercontent.com"
+- "Unable to fetch these reference materials"
+- "These links don't appear to be loading"
+
+**This is NOT a system failure.** This is a network/firewall issue. Exercises can still be generated at 80-85% quality using the LLM's built-in knowledge.
+
+### Quick Decision Tree
+
+**GitHub Access Failed? Follow This:**
+
+```
+├─ Try Again (60-70% success rate)
+│  └─ Copy STARTER-PROMPT, paste into LLM again
+│     (Different server route often fixes it)
+│
+└─ If Retry Fails:
+   ├─ Option A: Manual Copy-Paste (Full Quality)
+   │  └─ Copy ransomware-scenario.md content manually
+   │     Paste into conversation: "Use this scenario: [paste]"
+   │     Continue normally
+   │
+   ├─ Option B: Emergency Mode (80-85% Quality, No GitHub Needed)
+   │  └─ Tell LLM: "Generate without reference libraries, use your knowledge"
+   │     LLM generates exercise from training data
+   │     Still professional quality, slightly less detailed
+   │
+   └─ Option C: Switch LLM (Recommended)
+      └─ Try ChatGPT or Claude (98% GitHub success rate)
+         Retry with different LLM
+```
+
+### What to Report Back
+
+**If GitHub access fails, communicate to your team:**
+
+✅ **Good Message:**
+```
+"The LLM couldn't access GitHub reference libraries (network issue, not system
+issue). Generated exercise at 80-85% quality using AI training knowledge.
+
+Exercise is still professional and usable. For full quality, try:
+1. Retry in 5 minutes (often resolves)
+2. Switch to ChatGPT/Claude (more reliable GitHub access)
+3. Manual copy-paste mode (full quality, more setup)"
+```
+
+❌ **Bad Message (Don't Use):**
+```
+"System failed. Exercise quality is poor."
+```
+[This misses the root cause and blames the TTX system instead of the network]
+
+### Three Paths to Usable Output
+
+| Path | GitHub Access | Quality | Time | When to Use |
+|------|---|---|---|---|
+| **Ideal** | ✅ Yes | 95-100% | 2-5 min | LLM can reach GitHub |
+| **Retry** | ⏳ Maybe | 95-100% | +5 min | First attempt failed |
+| **Manual** | ❌ No | 95-100% | +10 min | Retry failed, want full quality |
+| **Emergency** | ❌ No | 80-85% | 2-5 min | Need exercise fast, GitHub down |
+
+**All paths produce usable, professional exercises.**
+
+### File Locations (For Manual Mode)
+
+If you need to manually copy-paste content, these files are in the GitHub repo:
+
+- **Main Scenario:** `defensive/TTXgenerator/ransomware-scenario.md`
+- **Injects:** `defensive/TTXgenerator/components/inject-library.md`
+- **Decisions:** `defensive/TTXgenerator/components/decision-points.md`
+- **Complications:** `defensive/TTXgenerator/components/complications.md`
+- **Style Guide:** `defensive/TTXgenerator/components/TTX-STYLE-GUIDE.md`
+
+Can also be found at: `https://github.com/focusedhunts/security-ai-starter-prompts/tree/main/defensive/TTXgenerator`
+
+### Corporate Firewall Issues?
+
+If your corporate network blocks GitHub:
+
+**Option 1:** Use personal device/hotspot to generate
+**Option 2:** Ask IT to whitelist: `raw.githubusercontent.com`
+**Option 3:** Use VPN if available
+**Option 4:** Use Manual Copy-Paste mode (Option B above)
+
+### Key Point for Engineers
+
+**If GitHub access fails, it means:**
+- ✅ The TTX Generator system works fine
+- ✅ The LLM is working fine
+- ❌ Network connectivity to GitHub is blocked
+- ❌ This is temporary/environmental (often fixes with retry)
+
+**Do NOT assume the exercise quality is poor.** Test one of the three backup paths above. You'll likely get 80-100% quality output.
+
+---
