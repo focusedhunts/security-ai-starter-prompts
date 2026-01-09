@@ -407,7 +407,7 @@ Some corporate networks block raw.githubusercontent.com. Three solutions:
 - Retry the conversation—different server routes often resolve temporarily unavailable access
 
 **Option 2 - Manual Copy-Paste (Full Quality, 5 minutes extra)**
-- Open [ransomware-scenario.md](ransomware-scenario.md) in your browser
+- Open [ransomware-scenario.md](scenarios/ransomware-scenario.md) in your browser
 - Copy the scenario content
 - Paste into the AI conversation with: "Use this scenario: [paste]"
 - Continue conversation normally

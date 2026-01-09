@@ -7,12 +7,12 @@
 ## The Problem
 
 The STARTER-PROMPT references GitHub URLs for component libraries:
-- ransomware-scenario.md
-- inject-library.md
-- decision-points.md
-- complications.md
-- TTX-STYLE-GUIDE.md
-- AI-GENERATION-GUIDE.md
+- scenarios/ransomware-scenario.md
+- components/inject-library.md
+- components/decision-points.md
+- components/complications.md
+- components/TTX-STYLE-GUIDE.md
+- designGuides/AI-GENERATION-GUIDE.md
 
 **If the LLM cannot access these URLs:**
 - The AI will generate exercises WITHOUT the detailed component libraries
@@ -64,12 +64,12 @@ If GitHub access fails twice, use the manual approach:
 **Step 1: Copy Component Libraries Manually**
 
 Open these files in GitHub web interface and copy the content:
-- https://github.com/focusedhunts/security-ai-starter-prompts/blob/main/defensive/TTXgenerator/ransomware-scenario.md
+- https://github.com/focusedhunts/security-ai-starter-prompts/blob/main/defensive/TTXgenerator/scenarios/ransomware-scenario.md
 - https://github.com/focusedhunts/security-ai-starter-prompts/blob/main/defensive/TTXgenerator/components/inject-library.md
 - https://github.com/focusedhunts/security-ai-starter-prompts/blob/main/defensive/TTXgenerator/components/decision-points.md
 - https://github.com/focusedhunts/security-ai-starter-prompts/blob/main/defensive/TTXgenerator/components/complications.md
 - https://github.com/focusedhunts/security-ai-starter-prompts/blob/main/defensive/TTXgenerator/components/TTX-STYLE-GUIDE.md
-- https://github.com/focusedhunts/security-ai-starter-prompts/blob/main/defensive/TTXgenerator/AI-GENERATION-GUIDE.md
+- https://github.com/focusedhunts/security-ai-starter-prompts/blob/main/defensive/TTXgenerator/designGuides/AI-GENERATION-GUIDE.md
 
 **Step 2: Modified STARTER-PROMPT Usage**
 
@@ -85,13 +85,13 @@ You are an incident response tabletop exercise designer helping me create a cust
 I'm unable to access the GitHub URLs, so I'm pasting the reference materials directly below.
 
 ### Scenario Library:
-[PASTE ransomware-scenario.md CONTENT HERE]
+[PASTE scenarios/ransomware-scenario.md CONTENT HERE]
 
 ### Component Libraries:
-[PASTE inject-library.md CONTENT HERE]
-[PASTE decision-points.md CONTENT HERE]
-[PASTE complications.md CONTENT HERE]
-[PASTE TTX-STYLE-GUIDE.md CONTENT HERE]
+[PASTE components/inject-library.md CONTENT HERE]
+[PASTE components/decision-points.md CONTENT HERE]
+[PASTE components/complications.md CONTENT HERE]
+[PASTE components/TTX-STYLE-GUIDE.md CONTENT HERE]
 
 ### Generation Instructions:
 [PASTE AI-GENERATION-GUIDE.md CONTENT HERE]

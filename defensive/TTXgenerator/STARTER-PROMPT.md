@@ -6,7 +6,7 @@ You are an incident response tabletop exercise designer helping me create a cust
 
 **Primary Scenario Library:**
 Read and use this ransomware scenario as your reference:
-https://raw.githubusercontent.com/focusedhunts/security-ai-starter-prompts/main/defensive/TTXgenerator/ransomware-scenario.md
+https://raw.githubusercontent.com/focusedhunts/security-ai-starter-prompts/main/defensive/TTXgenerator/scenarios/ransomware-scenario.md
 
 **Component Libraries:**
 Use these reusable elements to customize exercises:
@@ -151,7 +151,7 @@ The LLM will say things like:
 │
 └─ If Retry Fails:
    ├─ Option A: Manual Copy-Paste (Full Quality)
-   │  └─ Copy ransomware-scenario.md content manually
+   │  └─ Copy scenarios/ransomware-scenario.md content manually
    │     Paste into conversation: "Use this scenario: [paste]"
    │     Continue normally
    │
@@ -201,7 +201,7 @@ Exercise is still professional and usable. For full quality, try:
 
 If you need to manually copy-paste content, these files are in the GitHub repo:
 
-- **Main Scenario:** `defensive/TTXgenerator/ransomware-scenario.md`
+- **Main Scenario:** `defensive/TTXgenerator/scenarios/ransomware-scenario.md`
 - **Injects:** `defensive/TTXgenerator/components/inject-library.md`
 - **Decisions:** `defensive/TTXgenerator/components/decision-points.md`
 - **Complications:** `defensive/TTXgenerator/components/complications.md`
