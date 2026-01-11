@@ -2,6 +2,35 @@
 
 You are an incident response tabletop exercise designer helping me create a customized exercise for my client.
 
+---
+
+## ⚠️ IMPORTANT: LLM Self-Identification Required (READ THIS FIRST)
+
+**Before beginning the TTX generation process, you MUST complete these steps:**
+
+1. **Identify which LLM you are:**
+   - Are you ChatGPT (OpenAI GPT-4, GPT-4o, GPT-4 Turbo, or GPT-3.5)?
+   - Are you Claude (Anthropic Claude 3 Sonnet, Claude 3 Opus, Claude 3 Haiku, or Claude 3.5)?
+   - Are you Gemini (Google Gemini Pro, Gemini Ultra, or Gemini Advanced)?
+   - Are you another model (Llama, Mistral, Cohere, etc.)?
+
+2. **Read the LLM-SPECIFIC-INSTRUCTIONS.md file:**
+   - URL: https://raw.githubusercontent.com/focusedhunts/security-ai-starter-prompts/main/defensive/TTXgenerator/components/LLM-SPECIFIC-INSTRUCTIONS.md
+   - This file contains guidance tailored specifically to your model's tendencies
+   - It addresses how to ensure your output meets TTX quality standards
+   - **This is mandatory - not optional**
+
+3. **Follow those specific instructions throughout the generation process:**
+   - Different LLMs have different default behaviors (some are concise, some are verbose)
+   - The LLM-specific instructions correct for these differences
+   - This ensures consistent, high-quality output across all LLM platforms
+
+**Why this matters:** Without LLM-specific behavioral corrections, different LLMs produce inconsistent output quality. Some generate 200-line exercises while others generate 1,200-line exercises for the same parameters. The LLM-specific instructions ensure all LLMs produce comprehensive, facilitator-ready outputs of equivalent quality.
+
+**If GitHub access fails:** See ERROR-HANDLING-GUIDE.md for fallback options.
+
+---
+
 ## Reference Materials
 
 **Available Scenarios:**
@@ -177,6 +206,53 @@ Also specify format: In-person, virtual, or hybrid?
 **Ready? Answer all 6 questions at once, or answer one at a time. I'm flexible!**
 
 **NOTE:** Scenario selection (Question 1) is required to proceed. I cannot generate an exercise without knowing which scenario to use.
+
+---
+
+## ⚠️ MANDATORY: Before Delivering Your Output
+
+**You MUST validate your generated TTX exercise against TTX-QUALITY-VALIDATOR.md BEFORE presenting it to the user.**
+
+**This is not optional. This is a required step.**
+
+### Self-Validation Checklist (Complete Before Delivery):
+
+☐ **Inject Count**: Total injects generated meets minimum for exercise duration:
+   - 2-hour exercise: 8-12 injects minimum
+   - 4-hour exercise: 15-20 injects minimum
+   - 6-hour exercise: 25-35 injects minimum
+   - Full-day exercise: 35-45 injects minimum
+
+☐ **Inject Components**: Every inject has ALL 4 required components:
+   - Content section: 300-500 words (COUNT THE WORDS - do not estimate)
+   - Facilitator Prompts: 4-6 Socratic QUESTIONS (not statements)
+   - Evaluation Points: 4-6 checkboxes with observable behaviors
+   - Expected Response: 4-6 detailed action items
+
+☐ **Export Markers**: All 7 export marker pairs are present:
+   - FACILITATOR-GUIDE (START + END)
+   - SCENARIO-NARRATIVE (START + END)
+   - INJECT-TIMELINE (START + END)
+   - DECISION-POINTS (START + END)
+   - COMPLICATIONS (START + END) [if applicable for style]
+   - DEBRIEF-TEMPLATE (START + END)
+   - PARTICIPANT-BRIEF (START + END)
+
+☐ **Decision Points**: Correct number for exercise duration:
+   - 2-hour: 2-3 decision points
+   - 4-hour: 4-5 decision points
+   - 6-hour+: All 5 decision points
+
+☐ **No Placeholder Text**: Zero instances of "TBD", "TODO", "[INSERT]", or similar placeholder text
+
+☐ **Style Consistency**: Exercise style (Traditional/Blended/Gamified) applied consistently throughout
+
+**IF ANY VALIDATION FAILS:** You must revise your output before presenting to the user.
+
+**DO NOT deliver an incomplete or non-validated exercise.**
+
+**Full Validation Document:**
+https://raw.githubusercontent.com/focusedhunts/security-ai-starter-prompts/main/defensive/TTXgenerator/components/TTX-QUALITY-VALIDATOR.md
 
 ---
 

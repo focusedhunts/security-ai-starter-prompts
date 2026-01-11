@@ -9,6 +9,156 @@
 
 ---
 
+## ⚠️ MANDATORY SELF-VALIDATION FOR LLMs (COMPLETE BEFORE DELIVERY)
+
+**If you are an LLM generating a TTX exercise, you MUST run this validation against your output BEFORE presenting it to the user.**
+
+**This is not optional. This is a required step.**
+
+### LLM Self-Validation Checklist
+
+After generating your complete TTX exercise, complete these checks:
+
+#### Step 1: Count Your Injects
+
+**Total injects generated:** _____ (fill in the actual count)
+
+**Required minimum for exercise duration:**
+- 2-hour exercise: 8-12 injects MINIMUM
+- 4-hour exercise: 15-20 injects MINIMUM
+- 6-hour exercise: 25-35 injects MINIMUM
+- Full-day exercise: 35-45 injects MINIMUM
+
+☐ **PASS:** I have met or exceeded the minimum inject count for this duration
+☐ **FAIL:** I need to generate more injects before delivering
+
+**If FAIL:** Add the missing number of injects to your output, then re-validate.
+
+#### Step 2: Validate Inject Components
+
+**For EVERY inject in your output, verify:**
+
+☐ **Content section exists and is 300-500 words**
+   - Do NOT estimate - COUNT THE WORDS in each Content section
+   - If any inject has <300 words, expand it before delivering
+
+☐ **Facilitator Prompts section exists with 4-6 Socratic QUESTIONS**
+   - Must be questions (ending with "?"), not statements
+   - Example of CORRECT: "What's your confidence level that this is malicious?"
+   - Example of INCORRECT: "Team should consider if this is malicious"
+
+☐ **Evaluation Points section exists with 4-6 checkboxes**
+   - Must use checkbox format: ☐ Observable behavior
+   - Each checkbox should describe a process behavior the facilitator can observe
+
+☐ **Expected Response section exists with 4-6 action items**
+   - Must be specific, actionable items (not vague descriptions)
+   - Include both technical AND communication actions
+
+**Validation Method:** Randomly sample 3 injects and check all 4 components are present and correct.
+
+**If ANY inject is missing ANY component:** Add the missing components to all affected injects, then re-validate.
+
+#### Step 3: Count Export Markers
+
+**Search your output for "EXPORT MARKER:"**
+
+**Total occurrences:** _____ (fill in the count)
+
+**Required:** Exactly 14 occurrences (7 START markers + 7 END markers)
+
+☐ **PASS:** I have exactly 14 export marker occurrences (7 pairs)
+☐ **FAIL:** I am missing export markers or have malformed pairs
+
+**The 7 required pairs:**
+1. FACILITATOR-GUIDE (START + END)
+2. SCENARIO-NARRATIVE (START + END)
+3. INJECT-TIMELINE (START + END)
+4. DECISION-POINTS (START + END)
+5. COMPLICATIONS (START + END)
+6. DEBRIEF-TEMPLATE (START + END)
+7. PARTICIPANT-BRIEF (START + END)
+
+**If FAIL:** Add missing export markers or fix malformed pairs, then re-validate.
+
+#### Step 4: Scan for Placeholder Text
+
+**Search your output for these terms:**
+- "TBD"
+- "TODO"
+- "[INSERT"
+- "[Add"
+- "[TBD]"
+- "PLACEHOLDER"
+
+**Total occurrences found:** _____ (fill in the count)
+
+☐ **PASS:** Zero placeholder text found
+☐ **FAIL:** Placeholder text exists in my output
+
+**If FAIL:** Replace ALL placeholder text with complete, professional content, then re-validate.
+
+#### Step 5: Verify Decision Points
+
+**Count your decision points:** _____ (fill in the count)
+
+**Required for exercise duration:**
+- 2-hour exercise: 2-3 decision points
+- 4-hour exercise: 4-5 decision points
+- 6-hour+ exercise: All 5 decision points fully developed
+
+☐ **PASS:** I have the correct number of decision points for this duration
+☐ **FAIL:** I need to add or expand decision points
+
+**If FAIL:** Add missing decision points or expand incomplete ones, then re-validate.
+
+#### Step 6: Check Style Consistency
+
+**Review 3 random injects from your output:**
+
+Does each inject match the chosen exercise style?
+- **Traditional:** No time pressure, facilitator-paced, no scoring, 20-30 min per inject
+- **Blended:** Moderate time pressure, light scoring, 10-15 min response windows
+- **Gamified:** Strict timing (T+X format), heavy scoring with points, 3-5 min per inject
+
+☐ **PASS:** All sampled injects consistently match the chosen style
+☐ **FAIL:** Style is inconsistent across injects
+
+**If FAIL:** Standardize the style throughout the entire exercise, then re-validate.
+
+### LLM-Specific Reminders
+
+**If you are ChatGPT:**
+- ☐ Did you expand every inject Content section to 300-500 words? (Your natural tendency is to be concise - resist this)
+- ☐ Did you include extensive facilitator notes? (Not just brief prompts)
+
+**If you are Gemini:**
+- ☐ Did you include Facilitator Prompts in EVERY inject? (These are not optional)
+- ☐ Did you include Evaluation Points in EVERY inject? (These are not optional)
+
+**If you are Claude:**
+- ☐ Did you maintain comprehensive detail throughout all sections? (Don't abbreviate later sections)
+- ☐ Is your output 900-1,200+ lines for a 4-hour exercise? (Your natural thoroughness is ideal - maintain it)
+
+**If you are another LLM:**
+- ☐ Did you follow the comprehensive approach checklist from LLM-SPECIFIC-INSTRUCTIONS.md?
+
+### Final Action Required
+
+**IF ANY VALIDATION ABOVE FAILED:**
+1. **STOP** - Do NOT deliver the output yet
+2. **FIX** the specific issue(s) identified
+3. **RE-VALIDATE** - Run through this checklist again
+4. **REPEAT** until all checks pass
+
+**IF ALL VALIDATIONS PASSED:**
+- ✅ Your output is ready for delivery
+- ✅ Present the complete TTX exercise to the user
+
+**DO NOT deliver an incomplete or non-validated exercise to the user.**
+
+---
+
 ## Executive Validation Flow
 
 Every TTX exercise generation follows this flow:

@@ -1,24 +1,68 @@
 # AI Generation Guide for TTX Exercises
 
-**Purpose:** This guide instructs the AI (ChatGPT, Claude, etc.) on how to generate appropriate TTX exercises based on the 5 consultant questions.
+**Purpose:** This guide instructs the AI (ChatGPT, Claude, Gemini, etc.) on how to generate appropriate TTX exercises based on the 5 consultant questions.
 
 **Use Case:** When a consultant pastes STARTER-PROMPT.md into an AI tool and answers the 5 questions, the AI uses THIS guide to generate the correct style/duration/difficulty variant.
 
 ---
 
-## How to Use This Guide
+## ⚠️ PREREQUISITE: Step 0 - LLM Self-Identification (MANDATORY FIRST STEP)
 
-After the consultant answers the 5 questions, you (the AI) will:
+**Before proceeding to Step 1, you MUST complete LLM self-identification.**
 
-1. **Understand the constraints** (Q1-Q5)
-2. **Select from component libraries** (inject-library.md, decision-points.md, complications.md)
-3. **Apply style-specific guidance** (from TTX-STYLE-GUIDE.md)
-4. **Generate duration-appropriate content** (using templates)
-5. **Output a facilitator package** (markdown document ready to use)
+### Step 0A: Identify Your Model
+
+Ask yourself: Which LLM am I?
+
+- **ChatGPT** (OpenAI GPT-4, GPT-4o, GPT-4 Turbo, or GPT-3.5)?
+- **Claude** (Anthropic Claude 3 Sonnet, Claude 3 Opus, Claude 3 Haiku, or Claude 3.5)?
+- **Gemini** (Google Gemini Pro, Gemini Ultra, or Gemini Advanced)?
+- **Other** (Llama, Mistral, Cohere, etc.)?
+
+### Step 0B: Read Your LLM-Specific Instructions
+
+**URL:** https://raw.githubusercontent.com/focusedhunts/security-ai-starter-prompts/main/defensive/TTXgenerator/components/LLM-SPECIFIC-INSTRUCTIONS.md
+
+This file contains guidance tailored specifically to your model's natural behavioral tendencies. It addresses:
+- Your strengths and weaknesses for TTX generation
+- Mandatory corrections for consistent output quality
+- Pre-generation checklists specific to your model
+
+**Read the section corresponding to your model identity.**
+
+### Step 0C: Complete Pre-Generation Checklist
+
+**Before proceeding to Step 1, verify:**
+
+☐ I have identified which LLM I am
+☐ I have read the LLM-specific instructions for my model (ChatGPT / Claude / Gemini / Other)
+☐ I understand that every inject MUST have 300-500 words of content (I will count words, not estimate)
+☐ I understand that every inject MUST have 4-6 Socratic questions as Facilitator Prompts (not statements)
+☐ I understand that every inject MUST have 4-6 evaluation checkboxes with observable behaviors
+☐ I understand that every inject MUST have 4-6 detailed Expected Response action items
+☐ I will validate my output against TTX-QUALITY-VALIDATOR.md before delivery
+☐ I will NOT abbreviate, summarize, or skip components to save space/tokens
+
+**If ANY checkbox is unchecked, STOP and read LLM-SPECIFIC-INSTRUCTIONS.md.**
+
+**Once all checkboxes are complete, proceed to Step 1.**
 
 ---
 
-## Step 1: Parse the 5 Questions
+## How to Use This Guide
+
+After completing Step 0 (LLM self-identification) and after the consultant answers the 6 questions, you (the AI) will:
+
+1. **Understand the constraints** (Q1-Q6)
+2. **Select from component libraries** (inject-library.md, decision-points.md, complications.md)
+3. **Apply style-specific guidance** (from TTX-STYLE-GUIDE.md)
+4. **Generate duration-appropriate content** (using templates)
+5. **Validate output** (against TTX-QUALITY-VALIDATOR.md)
+6. **Output a facilitator package** (markdown document ready to use)
+
+---
+
+## Step 1: Parse the 6 Questions
 
 ### Question 1: Client Context
 **Extract:**
@@ -1229,6 +1273,41 @@ Once Layer 1 passes, evaluate these quality standards:
 
 ---
 
+## Final Step: Mandatory Self-Validation Before Delivery
+
+**After generating your complete TTX exercise, you MUST complete this final validation step:**
+
+### Step 7: Self-Validate Your Output (MANDATORY)
+
+**URL:** https://raw.githubusercontent.com/focusedhunts/security-ai-starter-prompts/main/defensive/TTXgenerator/components/TTX-QUALITY-VALIDATOR.md
+
+**Before presenting your output to the user, complete these validation checks:**
+
+☐ **Count your injects:** Total generated = _____ (verify meets minimum for duration)
+☐ **Randomly sample 3 injects:** Verify all 4 components present (Content 300-500 words, Facilitator Prompts 4-6 questions, Evaluation Points 4-6 checkboxes, Expected Response 4-6 items)
+☐ **Count export markers:** Search for "EXPORT MARKER" = _____ occurrences (must be exactly 14: 7 START + 7 END)
+☐ **Scan for placeholder text:** Search for "TBD", "TODO", "[INSERT]" = _____ instances (must be zero)
+☐ **Verify decision points:** Count decision points = _____ (must match requirement for duration)
+☐ **Check style consistency:** Review 3 random injects - do they match chosen style? (Traditional/Blended/Gamified)
+
+**IF ANY VALIDATION FAILS:**
+1. Stop immediately
+2. Fix the specific issue
+3. Re-validate
+4. Do NOT deliver until all checks pass
+
+**IF ALL VALIDATIONS PASS:**
+- Your output is ready for delivery
+- Present the complete TTX exercise to the user
+
+**Remember Your LLM-Specific Instructions:**
+- **ChatGPT**: Did you expand content to 300-500 words per inject? Verify now.
+- **Gemini**: Did you include Facilitator Prompts and Evaluation Points in every inject? Check now.
+- **Claude**: Did you maintain comprehensive detail throughout all sections? Verify consistency.
+- **Other LLMs**: Did you follow the comprehensive approach checklist? Verify now.
+
+---
+
 **End of AI Generation Guide**
 
-This guide should be referenced by the LLM generating the exercise to ensure consistent, high-quality outputs across different styles and durations.
+This guide should be referenced by the LLM generating the exercise to ensure consistent, high-quality outputs across different styles, durations, and LLM platforms.
