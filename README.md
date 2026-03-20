@@ -23,7 +23,9 @@ GitHub Support.
 
 ------------------
 
-Today, March 20, 2026, I have deleted all GitHub data to GitLab. This post is left as it was printed in a book and I honestly never saw this coming by GitHub.
+Today, March 20, 2026, we have deleted all GitHub data to GitLab. 
+
+This post is left as it was printed in a book and I honestly never saw this coming by GitHub.
 
 From today forward, all Focused Hunts code and repositories will be moved to GitLab - https://gitlab.com/focused.hunts
 
