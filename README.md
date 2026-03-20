@@ -18,6 +18,7 @@ Please let me know if you need anything else.
 Kind regards,
 Jackson.
 GitHub Support.
+
 ------------------
 
 Today, March 20, 2026, I have deleted all GitHub data to GitLab. This post is left as it was printed in a book and I honestly never saw this coming by GitHub.
